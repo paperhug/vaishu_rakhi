@@ -1,9 +1,9 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"> 
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>For My Brother · Premium Rakhi Memory</title>
+  <title>For My Brother · A Rakhi Memory</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Sacramento&display=swap" rel="stylesheet">
@@ -17,54 +17,96 @@
     .scroll-cue { position:absolute; z-index:2; bottom:25px; left:50%; translate:-50%; font-size:.68rem; letter-spacing:.16em; text-transform:uppercase; color:#ffdd9b; text-decoration:none; }
     .rakhi-flow { position:absolute; z-index:1; bottom:58px; left:0; width:100%; height:90px; pointer-events:none; } .rakhi-flow path { fill:none; stroke:#f7c65b; stroke-width:3; stroke-linecap:round; } .rakhi-flow .fine { stroke:#fff1c4; stroke-width:1; } .rakhi-flow .petal { fill:#f8cf72; stroke:#fff0bf; stroke-width:1.2; } .rakhi-flow .outer { fill:#f8cf72; stroke:#fff0bf; stroke-width:3; } .rakhi-flow .accent { fill:#e98145; stroke:#fff0bf; stroke-width:1.2; } .rakhi-flow .gem { fill:#8a1123; stroke:#f8cf72; stroke-width:3; } .rakhi-flow .bead { fill:#fff1c4; }
     section { padding:92px clamp(22px,7vw,112px); } #memories { background:#fff0d7; } .intro { text-align:center; max-width:710px; margin:auto; } .kicker { color:var(--maroon); font-size:.74rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; } h2 { margin:10px 0 16px; color:var(--maroon); font:600 clamp(2.35rem,5vw,4rem)/1.05 "The Seasons","Playfair Display",serif; } .intro p { line-height:1.75; }
-    .moments { max-width:1120px; margin:auto; display:grid; grid-template-columns:1.1fr .9fr 1fr; gap:18px; align-items:end; } .moment { min-height:290px; position:relative; overflow:hidden; border-radius:4px; background:center/cover; box-shadow:0 13px 28px rgba(83,29,23,.15); } .moment::after { content:""; position:absolute; inset:40% 0 0; background:linear-gradient(transparent,rgba(48,9,16,.76)); } .moment:nth-child(1) { min-height:370px; } .moment:nth-child(3) { min-height:420px; } .moment span { position:absolute; z-index:1; bottom:18px; left:18px; right:18px; color:#fff9e9; font:600 1.2rem "The Seasons","Playfair Display",serif; }
-    .video-section { background:var(--maroon); color:#fff7ea; text-align:center; } .video-section h2 { color:#fff7ea; } .video-section .kicker { color:#fbd979; } .video-wrap { max-width:850px; margin:38px auto 0; position:relative; aspect-ratio:16/9; overflow:hidden; border:8px solid rgba(255,243,207,.22); box-shadow:0 18px 45px rgba(40,0,8,.35); background:#310612; } .video-wrap video { display:block; width:100%; height:100%; object-fit:contain; background:#310612; }
-    .voice { display:flex; flex-direction:column; gap:38px; max-width:860px; margin:auto; } .vinyl { width:min(250px,68vw); aspect-ratio:1; display:grid; place-items:center; margin:auto; border-radius:50%; background:repeating-radial-gradient(circle,#3d1520 0 4px,#29111a 5px 7px); box-shadow:0 18px 30px rgba(70,18,27,.23); } .vinyl::before { content:""; width:38%; aspect-ratio:1; border-radius:50%; background:var(--gold); border:10px solid var(--maroon); } .voice-card { width:min(100%,690px); display:flex; flex-direction:column; align-items:center; gap:20px; margin:auto; } .voice-card h2 { margin:0; text-align:center; font-size:clamp(1.45rem,2.6vw,2rem); } .audio-control { display:flex; align-items:center; gap:12px; flex:0 0 auto; color:var(--maroon); font-size:.78rem; font-weight:700; } .audio-control button { width:50px; height:50px; flex:0 0 auto; border:0; border-radius:50%; background:var(--maroon); color:#fff7ea; cursor:pointer; font-size:1rem; } .voice-bar { width:210px; } .waveform { height:25px; display:flex; align-items:center; gap:3px; overflow:hidden; } .waveform i { display:block; width:3px; border-radius:8px; background:#d99b70; } .waveform i:nth-child(3n) { height:22px; } .waveform i:nth-child(3n+1) { height:12px; } .waveform i:nth-child(3n+2) { height:17px; } .waveform i:nth-child(-n+13) { background:var(--maroon); } .voice-meta { display:flex; justify-content:space-between; margin-top:3px; color:#9c6a5d; font-size:.66rem; letter-spacing:.03em; }
+    #memory-wall { max-width:1120px; margin:auto; columns:4 220px; column-gap:20px; } .memory { position:relative; display:inline-block; width:100%; margin:0 0 20px; break-inside:avoid; padding:9px 9px 31px; background:#fff; box-shadow:0 13px 28px rgba(83,29,23,.15); transform:rotate(var(--tilt)); transition:transform .25s ease, box-shadow .25s ease; } .memory:hover { transform:rotate(0) translateY(-6px) scale(1.025); box-shadow:0 20px 34px rgba(75,34,28,.2); z-index:3; } .memory img { display:block; width:100%; height:auto; aspect-ratio:var(--shape); object-fit:cover; } .memory figcaption { position:absolute; bottom:8px; left:11px; right:11px; text-align:center; font:600 .9rem "The Seasons","Playfair Display",serif; color:var(--maroon); }
+    .video-section { background:var(--maroon); color:#fff7ea; text-align:center; } .video-section h2 { color:#fff7ea; } .video-section .kicker { color:#fbd979; } .video-wrap { width:min(100%, 900px); margin:38px auto 0; position:relative; aspect-ratio:16/9; overflow:hidden; border:8px solid rgba(255,243,207,.22); box-shadow:0 18px 45px rgba(40,0,8,.35); background:#310612; } .video-wrap video { display:block; width:100%; height:100%; object-fit:cover; background:#310612; }
     .letter-bg { background:#f9e3d7; } .letter { max-width:760px; margin:auto; text-align:center; } .letter summary { display:grid; place-items:center; min-height:260px; padding:34px; position:relative; isolation:isolate; overflow:hidden; cursor:pointer; list-style:none; color:#fff9e9; background:var(--maroon); box-shadow:0 15px 37px rgba(106,40,29,.18); } .letter summary::-webkit-details-marker { display:none; } .letter summary::before { content:""; position:absolute; z-index:-1; inset:0; background:#a91d34; clip-path:polygon(0 0,50% 62%,100% 0); } .letter summary span { font:600 clamp(1.7rem,4vw,2.5rem)/1.1 "The Seasons","Playfair Display",serif; } .letter summary small { display:block; margin-top:13px; color:#ffe2a2; font-size:.72rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; } .letter[open] summary { min-height:0; padding:16px; background:#751426; font-size:.8rem; } .letter[open] summary::before { display:none; } .letter[open] summary span { font:600 1rem "DM Sans",sans-serif; } .letter[open] summary small { display:none; } .letter-body { padding:clamp(30px,7vw,72px); background:#fffaf0; border:1px solid #edcfc2; } .letter h2 { font-style:italic; } .letter p { font:500 1rem/1.9 Montserrat,sans-serif; } .sign { margin-top:28px; color:var(--maroon); font:400 2.35rem Sacramento,cursive; }
     .finale { position:relative; overflow:hidden; color:#fff8eb; text-align:center; background:var(--wine); } .finale h2 { color:#fff8eb; } .finale p { position:relative; z-index:1; max-width:500px; margin:auto; line-height:1.7; } .finale .spark { color:var(--gold); font-size:2.2rem; letter-spacing:.32em; }
-    @media (max-width:700px) { .hero { min-height:670px; padding-bottom:130px; } .hero-copy { margin-top:105px; } .rakhi-flow { bottom:88px; height:70px; } section { padding:70px 20px; } .moments { grid-template-columns:1fr 1fr; } .moment:nth-child(1),.moment:nth-child(3) { min-height:280px; } .moment:nth-child(3) { grid-column:1 / -1; } .voice-card { align-items:center; } .audio-control { justify-content:flex-end; } .voice-bar { width:130px; } }
+    @media (max-width:700px) { .hero { min-height:670px; padding-bottom:130px; } .hero-copy { margin-top:105px; } .rakhi-flow { bottom:88px; height:70px; } section { padding:70px 20px; } #memory-wall { columns:2 145px; column-gap:12px; } .memory { margin-bottom:12px; padding:6px 6px 27px; } }
+    .music-toggle{position:fixed;right:18px;bottom:18px;z-index:1000;width:48px;height:48px;border:1px solid rgba(255,255,255,.45);border-radius:50%;background:rgba(103,16,30,.88);color:#fff7ea;box-shadow:0 8px 24px rgba(40,0,8,.25);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);cursor:pointer;font-size:1.05rem;display:grid;place-items:center}.music-toggle.is-off{opacity:.72}.music-toggle:active{transform:scale(.94)}
   </style>
 </head>
 <body>
+  <button id="music-toggle" class="music-toggle" type="button" aria-label="Background music on" aria-pressed="true" title="Background music">🎵</button>
   <header class="hero">
     <nav><span class="wish">Happy Rakshabandhan!</span></nav>
     <div class="hero-copy"><h1>Every little<br><i>memory of us.</i></h1><p>More than a Rakhi, this is a place for every laugh, every voice, and every moment that feels like home.</p></div>
     <svg class="rakhi-flow" viewBox="0 0 1440 84" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><path d="M-20 55 C160 3 330 96 510 48 S820 4 1015 51 S1280 90 1460 25"/><path class="fine" d="M-20 62 C160 10 330 103 510 55 S820 11 1015 58 S1280 97 1460 32"/><g transform="translate(720 36)"><ellipse class="petal" rx="10" ry="25" transform="rotate(0) translate(0 -22)"/><ellipse class="petal" rx="10" ry="25" transform="rotate(45) translate(0 -22)"/><ellipse class="petal" rx="10" ry="25" transform="rotate(90) translate(0 -22)"/><ellipse class="petal" rx="10" ry="25" transform="rotate(135) translate(0 -22)"/><ellipse class="petal" rx="10" ry="25" transform="rotate(180) translate(0 -22)"/><ellipse class="petal" rx="10" ry="25" transform="rotate(225) translate(0 -22)"/><ellipse class="petal" rx="10" ry="25" transform="rotate(270) translate(0 -22)"/><ellipse class="petal" rx="10" ry="25" transform="rotate(315) translate(0 -22)"/><circle class="outer" r="22"/><circle class="accent" r="14"/><circle class="gem" r="7"/></g><circle class="bead" cx="566" cy="38" r="7"/><circle class="accent" cx="603" cy="31" r="7"/><circle class="bead" cx="641" cy="29" r="7"/><circle class="bead" cx="799" cy="34" r="7"/><circle class="accent" cx="838" cy="40" r="7"/><circle class="bead" cx="874" cy="45" r="7"/></svg>
-    <a class="scroll-cue" href="#memories">Tap anywhere for music</a>
+    <span class="scroll-cue">Tap anywhere for music</span>
   </header>
   <main>
-    <section class="video-section"><h2>Watch this little moment</h2><p>Because some memories are best relived in motion.</p><div class="video-wrap"><video controls preload="metadata" title="A special Rakhi memory"><source src="video.mp4" type="video/mp4">Your browser does not support this video.</video></div></section>
-    <section><div class="voice"><div class="vinyl" aria-hidden="true"></div><div class="voice-card"><h2>A note in my voice</h2><div class="audio-control"><button id="voice-toggle" type="button" aria-label="Play voice message">▶</button><div class="voice-bar"><div class="waveform" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="voice-meta"><span id="voice-current">0:00</span><span id="voice-duration">--:--</span></div></div></div></div></div></section>
-    <section id="memories"><div class="intro"><h2>The ones we keep coming back to</h2><p>From being tiny troublemakers to becoming each other’s constants, there are some moments I never want us to forget.</p></div><div class="moments"><div class="moment" data-image="Our happiest days.jfif"><span></span></div><div class="moment" data-image="The laughter never changed.jfif"><span></span></div><div class="moment" data-image="Always in my corner.jfif"><span></span></div></div></section>
-    <section class="letter-bg"><details class="letter"><summary><span>A letter for you</span><small>Tap to open</small></summary><div class="letter-body"><div class="kicker">A letter for you</div><h2>To my forever brother,</h2><p>Thank you for being the person who knows every version of me and stays anyway. For all our fights, our silly jokes, and the quiet kind of care that never needs explaining—this little keepsake is for us.</p><p>Here’s to more stories, more photographs, and a lifetime of coming home to each other.</p><div class="sign">With all my love</div></div></details></section>
+    <section class="video-section"><h2>Watch this little moment</h2><p>This will always be my favourite video of you you’re so precious</p><div class="video-wrap"><video controls preload="metadata" title="A special Rakhi memory"><source src="video.mp4" type="video/mp4">Your browser does not support this video.</video></div></section>
+    <section id="memories"><div class="intro"><h2>The ones we keep coming back to</h2><p>From being tiny troublemakers to becoming each other’s constants, there are some moments I never want us to forget.</p></div><div id="memory-wall">
+      <figure class="memory" style="--tilt:-2deg;--shape:4/5"><img src="image1.jpeg" alt=""></figure>
+      <figure class="memory" style="--tilt:2.4deg;--shape:1/1"><img src="image2.jpeg" alt=""></figure>
+      <figure class="memory" style="--tilt:-1.2deg;--shape:4/3"><img src="image3.jpeg" alt=""></figure>
+      <figure class="memory" style="--tilt:1.5deg;--shape:3/4"><img src="image4.jpeg" alt=""></figure>
+      <figure class="memory" style="--tilt:2deg;--shape:4/3"><img src="image5.jpeg" alt=""></figure>
+      <figure class="memory" style="--tilt:-2deg;--shape:1/1"><img src="image6.jpeg" alt=""></figure>
+      <figure class="memory" style="--tilt:1deg;--shape:4/5"><img src="image7.jpeg" alt=""></figure>
+      <figure class="memory" style="--tilt:-1.8deg;--shape:4/3"><img src="image8.jpeg" alt=""></figure></div></section>
+    <section class="letter-bg"><details class="letter"><summary><span>A letter for you</span><small>Tap to open</small></summary><div class="letter-body">
+      <div class="kicker">A letter for you</div>
+      <h2>Hi Varun,</h2>
+      <p>I miss you so much</p>
+      <p>I miss you when you were a kid and following me everywhere</p>
+      <p>I miss you chasing around me and trying to copy me</p>
+      <p>But, I’m excited for our relationship in the days ahead- as brother and sister in adulthood
+You’ve grown to become a smart young man</p>
+      <p>But don’t change too much, please remember you’re my little brother and continue to copy what I do sometimes hehe
+</p>
+      <p>Even if you don’t know it, I care about you so much and love you so much</p>
+      <p>Also, I definitely cried atleast for FMAB</p>
+      <div class="sign">With all my love</div>
+    </div></details></section>
     <section class="finale"><div class="spark">✦ ✦ ✦</div><h2>Some things change.<br>Some things never do.</h2><p>Our bond will always be worth keeping close. Happy Rakshabandhan ❤️</p></section>
   </main>
-  <audio id="voice-player" preload="metadata"><source src="voice.mp3" type="audio/mpeg"></audio>
   <script>
-    document.querySelectorAll('.moment[data-image]').forEach((moment) => {
-      const filename = moment.dataset.image;
-      const caption = filename.replace(/\.[^/.]+$/, '').replace(/[-_]/g, ' ');
-      moment.style.backgroundImage = `url("${encodeURI(filename)}")`;
-      moment.querySelector('span').textContent = caption;
-    });
-
-    const voice = document.querySelector('#voice-player');
-    const toggle = document.querySelector('#voice-toggle');
-    const current = document.querySelector('#voice-current');
-    const duration = document.querySelector('#voice-duration');
-    const formatTime = (seconds) => `${Math.floor(seconds / 60)}:${String(Math.floor(seconds % 60)).padStart(2, '0')}`;
-    toggle.addEventListener('click', () => voice.paused ? voice.play() : voice.pause());
-    voice.addEventListener('play', () => { toggle.textContent = '❚❚'; toggle.setAttribute('aria-label', 'Pause voice message'); });
-    voice.addEventListener('pause', () => { toggle.textContent = '▶'; toggle.setAttribute('aria-label', 'Play voice message'); });
-    voice.addEventListener('loadedmetadata', () => duration.textContent = formatTime(voice.duration));
-    voice.addEventListener('timeupdate', () => current.textContent = formatTime(voice.currentTime));
-    voice.addEventListener('ended', () => { current.textContent = '0:00'; });
   </script>
 
   <audio id="bgMusic" src="bg music.mp3" loop></audio>
   <script>
     const music=document.getElementById('bgMusic');
-    document.addEventListener('click',()=>music.play(),{once:true});
+    const musicToggle=document.getElementById('music-toggle');
+    let musicEnabled=true;
+    let audioPauseDepth=0;
+
+    function updateMusicButton(){
+      musicToggle.textContent=musicEnabled?'🎵':'🔇';
+      musicToggle.classList.toggle('is-off',!musicEnabled);
+      musicToggle.setAttribute('aria-pressed',String(musicEnabled));
+      musicToggle.setAttribute('aria-label',musicEnabled?'Background music on':'Background music off');
+    }
+
+    function pauseBackgroundMusic(){
+      audioPauseDepth++;
+      music.pause();
+    }
+
+    function resumeBackgroundMusic(){
+      audioPauseDepth=Math.max(0,audioPauseDepth-1);
+      if(audioPauseDepth===0 && musicEnabled) music.play().catch(()=>{});
+    }
+
+    document.addEventListener('click',()=>{
+      if(musicEnabled && audioPauseDepth===0) music.play().catch(()=>{});
+    },{once:true});
+
+    musicToggle.addEventListener('click',(event)=>{
+      event.stopPropagation();
+      musicEnabled=!musicEnabled;
+      if(musicEnabled) music.play().catch(()=>{});
+      else music.pause();
+      updateMusicButton();
+    });
+
+    const video=document.querySelector('.video-wrap video');
+    if(video){
+      video.addEventListener('play',pauseBackgroundMusic);
+      video.addEventListener('pause',resumeBackgroundMusic);
+      video.addEventListener('ended',resumeBackgroundMusic);
+    }
+
+    updateMusicButton();
   </script>
 </body>
 </html>
